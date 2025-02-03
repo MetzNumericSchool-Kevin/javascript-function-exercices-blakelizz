@@ -70,7 +70,37 @@ console.log(inventaire);
 
 // --- Ajout de nouvelles potions dans l'inventaire
 
-// function ajoutPotionInventaire (inventaire, Potion) {
-    
+function ajoutPotionInventaire (inventaire, Potion){
+  for (let i of inventaire){
+    // console.log(i);
+    if (Potion.id === inventaire[0].id) {
+      inventaire[0].prix = Potion.prix,
+      inventaire[0].stock = Potion.stock,
+      console.log("Inventaire de la potion " + Potion.id + " modifier." )
+    }
+    else {
+      inventaire.push(Potion),
+      console.log("Potion " + Potion.id + " ajoutée.")
+    }
+    break;
+  }
+};
 
-// };
+// Ajouter 
+const potionShield = {id: "potion_shield", prix: 14, stock: 5};
+// Modifier
+const potionSoin = {id: "potion_soin", prix: 19, stock: 0};
+
+
+ajoutPotionInventaire(inventaire, potionShield);
+ajoutPotionInventaire(inventaire, potionSoin);
+
+
+console.log(inventaire);
+
+
+
+
+
+// ---  Cherche moi les potions qui...
+
